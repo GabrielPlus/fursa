@@ -1,50 +1,108 @@
-# Welcome to your Expo app 👋
+Fursa - Job Application Platform
+About
+Fursa is a job application platform designed specifically for the youth of Mombasa. The app provides a user-friendly interface where young people can easily apply for jobs, create profiles, track applications, and receive updates on their application status. Fursa aims to simplify the job application process, empowering the youth with tools to manage their career opportunities.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Additionally, Fursa integrates CortexAI, a powerful chatbot system, allowing users to interact with an AI-powered assistant for career guidance, job recommendations, and job application assistance.
 
-## Get started
 
-1. Install dependencies
+Features
+User Profiles: Create and manage personal profiles, showcasing skills, qualifications, and work experience.
+Job Listings: View a curated list of job openings relevant to the user’s skills and interests.
+Job Applications: Apply directly to job listings with a simple, seamless process.
+Notifications: Get real-time notifications for new job opportunities and application status updates.
+Resume Builder: A built-in resume builder to help users create professional resumes quickly.
+Job Tracker: Track the status of job applications in one place.
+CortexAI Integration:
+Career Guidance: Get personalized advice from the AI assistant based on your profile and interests.
+Job Recommendations: Receive AI-powered job recommendations tailored to your profile.
+Chatbot Assistance: Use CortexAI to get answers to questions related to the job application process, skills improvement, and more.
+Custom AI Training: Admins can train CortexAI to answer frequently asked questions, guide users, and enhance engagement.
+Tech Stack
+Frontend: React Native, Expo
+Backend: Node.js, Express.js, MongoDB (for user and job data)
+Authentication: JWT (JSON Web Tokens) for secure user authentication
+Database: MongoDB (storing user data, job applications, job listings)
+Real-time Notifications: Firebase or similar services for push notifications
+UI/UX: Designed with a focus on simplicity, user-friendliness, and accessibility
+AI Integration: CortexAI for personalized career guidance and chatbot services.
+Prerequisites
+Before you start, ensure that you have the following installed:
 
-   ```bash
-   npm install
-   ```
+Node.js: Install Node.js (version 16 or later recommended)
+Expo CLI: Install Expo CLI
+MongoDB: A running instance of MongoDB for storing user and job data.
+CortexAI Account: An account with CortexAI to train and manage the AI assistant for the app.
+Getting Started
+Follow these steps to set up the app locally:
 
-2. Start the app
+1. Clone the repository:
+bash
+Copy code
+git clone https://github.com/GabrielPlus/fursa.git
+cd fursa
+2. Install dependencies:
+Run the following command to install all required dependencies:
 
-   ```bash
-    npx expo start
-   ```
+bash
+Copy code
+npm install
+3. Set up environment variables:
+Create a .env file in the root directory to define any environment variables (will be given, DIYEM).
 
-In the output, you'll find options to open the app in a
+4. Start the development server:
+Run the following command to start the app:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+bash
+Copy code
+npm run start
+For Android, you can use the following:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+bash
+Copy code
+npm run android
+The app should now be available on your Android emulator or physical device.
 
-## Get a fresh project
+5. Authentication API:
+Fursa uses Clerk for authentication. The API allows users to sign up, log in, and view their profile and application status:
 
-When you're ready, run:
+POST /api/auth/signup: Register a new user.
+POST /api/auth/login: Log in to an existing account.
+GET /api/users/me: Retrieve user profile information.
+POST /api/jobs/apply: Apply for a job.
+6. Job Listings API:
+GET /api/jobs: Get a list of available job openings.
+POST /api/jobs: Add a new job listing (Admin only).
+7. CortexAI Integration:
+Train CortexAI: Admins can train CortexAI with frequently asked questions and job-related queries via the admin dashboard or API.
+Chatbot Interface: Users can interact with the CortexAI chatbot within the app for career guidance, job recommendations, and questions.
+Folder Structure
+Here’s an overview of the project folder structure:
 
-```bash
-npm run reset-project
-```
+bash
+Copy code
+/assets           # Static assets like images, logos, etc.
+/components       # Reusable components like buttons, form inputs, etc.
+/pages            # React Native screens for job listings, profile, etc.
+/services         # API calls and services for user auth, job data, etc.
+/models           # Mongoose models for user, job, and application data
+/database         # Database-related configurations (MongoDB setup)
+/notifications    # Push notification setup for job updates and application status
+/cortexai         # Integration setup for CortexAI (AI assistant and chatbot functionalities)
+/App.js           # Main entry point of the app
+/package.json     # Project configuration and dependencies
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Running Tests
+If you have set up tests for the platform, you can run them using:
 
-## Learn more
+bash
+Copy code
+npm test
+Contributing
+We welcome contributions! If you'd like to contribute to Fursa, please follow these steps:
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Fork the repository.
+Create a new branch for your changes.
+Make your changes.
+Submit a pull request for review.
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
