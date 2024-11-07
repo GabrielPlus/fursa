@@ -75,21 +75,8 @@ POST /api/jobs: Add a new job listing (Admin only).
 7. CortexAI Integration:
 Train CortexAI: Admins can train CortexAI with frequently asked questions and job-related queries via the admin dashboard or API.
 Chatbot Interface: Users can interact with the CortexAI chatbot within the app for career guidance, job recommendations, and questions.
-Folder Structure
-Here’s an overview of the project folder structure:
 
-bash
-Copy code
-/assets           # Static assets like images, logos, etc.
-/components       # Reusable components like buttons, form inputs, etc.
-/pages            # React Native screens for job listings, profile, etc.
-/services         # API calls and services for user auth, job data, etc.
-/models           # Mongoose models for user, job, and application data
-/database         # Database-related configurations (MongoDB setup)
-/notifications    # Push notification setup for job updates and application status
-/cortexai         # Integration setup for CortexAI (AI assistant and chatbot functionalities)
-/App.js           # Main entry point of the app
-/package.json     # Project configuration and dependencies
+
 
 Running Tests
 If you have set up tests for the platform, you can run them using:
